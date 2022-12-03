@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda en Linea</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>Mi tienda en Línea -  Admin</h1>
+
+  <div>
+    <h2> Agregar Producto </h2>
+    <form action="" id="nuevoProductoForm" onsubmit="agregarProducto(e)">
+      <div class="form-field">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="" >
+      </div>
+      
+      <div class="form-field">
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" id="precio" value="" >
+      </div>
+
+      <div class="form-field">
+        <label for="precio">Cantidad</label>
+        <input type="number" name="cantidad" id="cantidad" value="" >
+      </div>
+      
+      <div class="form-field">
+        <label for="categoria">Categoría</label>
+        <input type="text" name="categoria" id="categoria" value="" >
+      </div>
+      
+      <div class="form-field">
+        <label for="descripcion">Descripción</label>
+        <textarea type="text" name="descripcion" id="descripcion" value="" ></textarea>
+      </div>
+      
+      <input type="submit" name="enviar" value="Agregar"/>
+    </form>
+
+
+    <!-- <button onclick="agregarProducto()"></button> -->
+  </div>
+
+
+  <div class="list-container">
+    <div class="list-container-header">
+      <h2> Lista de Productos </h2>
+    </div>
+    <div id="productList" class="product-list">
+      <h4>No hay productos por el momento</h4>
+    </div>
+  </div>
+
+</body>
+<script src="./main.js"></script>
+</html>

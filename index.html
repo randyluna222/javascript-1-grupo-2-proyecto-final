@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
+<!-- <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <!---<title> Responsive Registration Form | CodingLab </title>--->
     <link rel="stylesheet" href="style.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Javascrip</title>
    </head>
 <body>
   <div class="container">
     <div class="title">Registro</div>
     <div class="content">
-      <form action="#">
+      <form id="ProductContainer" action="" onsubmit="agregarProducto(e)">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nombre del producto</span>
@@ -31,14 +30,20 @@
           </div>
           <div class="input-box">
             <span class="details">cantidad</span>
-            <input type="text" placeholder="Ingrese cantidad" required>
+            <input type="number" placeholder="Ingrese cantidad" required>
+          </div>
+          <div class="input-box">
+            <input type="text" onkeypress="checkName(event);"/>
           </div>
         </div>
         <div class="button">
           <input type="submit" value="Agregar">
         </div>
       </form>
+      <script src="./main.js"></script>
+      <div id="productos">
+      </div>
     </div>
   </div>
 </body>
-</html>
+</html> -->
