@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <title>ProyectoFinalJs</title>
+  <title>JAVASCRIPT PROJECT</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
-  <h1>Sneakers</h1>
-  <form action="" id="nuevoProductoForm" onsubmit="agregarSneaker(event)">
-    <div class="form-sneakers">
-      <label for="nombre">Nombre sneaker</label>
-      <input type="text" name="nombre" id="nombre" value="">
-    </div>
-
-    <div class="form-sneakers">
-      <label for="precio">Precio</label>
-      <input type="number" name="precio" id="precio" value="">
-    </div>
-
-    <div class="form-sneakers">
-      <label for="precio">Cantidad</label>
-      <input type="number" name="cantidad" id="cantidad" value="">
-    </div>
-
-    <div class="form-sneakers">
-      <label for="categoria">Categoría</label>
-      <input type="text" name="categoria" id="categoria" value="">
-    </div>
-
-    <div class="form-sneakers">
-      <label for="descripcion">Descripción</label>
-      <textarea type="text" name="descripcion" id="descripcion" value=""></textarea>
-    </div>
-
-    <!--Button Agregar-->
-    <button onclick="agregarSneaker()"></button>
-
-    <input type="submit" name="enviar" value="Agregar" />
-  </form>
-  </div>
-
-  <!--CONTENEDORES-->
-
-  <div class="list-contain">
-    <div class="list-contain-head">
-      <h2>Sneakers</h2>
-    </div>
-    <div id="sneakeList" class="sneake-List">
-      <h3>Sin Sneaker</h3>
-    </div>
-  </div>
-
   
-  <script src="./main.js"></script>
-</body>
 
+  <div class="container">
+    <h1 class="title">Tennis</h1>
+    <h2> Agregar Tennis </h2>
+    <div class="content">
+      <form action=""  id="nuevoProductoForm" onsubmit="agregarProducto(event)">
+        <div class="user-details">
+        <div class="input-box">
+          <label class="form"  for="Nombre">Nombre del producto</label>
+          <input type="text" name="nombre"  id="nombre" value="" >
+        </div>
+        
+        <div class="input-box">
+          <label class="details" for="precio">Precio</label>
+          <input type="number" name="precio" id="precio" value="" >
+        </div>
+  
+        <div class="input-box">
+          <label class="details"  for="descripcion">Descripción</label>
+          <input type="text" name="descripcion" id="descripcion" value="" >
+        </div>
+        
+        <div class="input-box">
+          <label class="details"  for="categoria">Categoría</label>
+          <input type="text" name="categoria" id="categoria" value="" >
+        </div>
+        
+        <div class="input-box">
+          <label class="details"  for="Cantidad">Cantidad</label>
+          <input type="number" name="cantidad" id="cantidad" value="" >
+        </div>
+      </div >
+      <div class="button">
+        <input type="submit" name="enviar" value="Agregar"/>
+      </div>
+      </form>
+    
+
+
+    <!-- <button onclick="agregarProducto()"></button> -->
+  </div>
+
+
+  <div class="list-container">
+    <div class="list-container-header">
+      <h2> Lista de Productos </h2>
+    </div>
+    <div id="productList" class="product-list">
+      <h4>No hay productos por el momento</h4>
+    </div>
+  </div>
+
+</body>
+<script src="./main.js"></script>
 </html>
