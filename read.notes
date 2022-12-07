@@ -1,0 +1,14 @@
+/*const myList = document.querySelectorAll(".myList");
+
+
+const form = document.querySelector("#miFormulario");
+const input = document.querySelector("#name");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    myArray.forEach(element => {
+        if (element.textContent == input.value) {
+            console.log("encontrado")
+        }
+    });
+});*/
