@@ -39,8 +39,6 @@ const imprimirProductos = (lista) => {
     const boton = document.createElement("button");
     boton.addEventListener("click", () => {
       eliminarTenis(tenis.nombre);
-      if (item.nombre == tenisNombre) {
-        alert("no");}
     });
 
 
