@@ -65,9 +65,9 @@ const imprimirProductos = (lista) => {
 const eliminarTenis = (tenisNombre) => {
   listaTenis = listaTenis.filter((item) => {
     if (item.nombre !== tenisNombre) {
-      return respuesta;
+      return item;
     } else if (item.nombre === item.nombre) {
-      alert("seguro");
+      alert("seguro que quieres borrar?");
     }
   });
   imprimirProductos(listaTenis);
