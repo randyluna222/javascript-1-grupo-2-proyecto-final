@@ -62,13 +62,14 @@ const imprimirProductos = (lista) => {
 };
 /*____________________________________________________BORRAR________________________________________________*/
 
-const eliminarTenis = (productoNombre) => {
-  listaTenis = listaTenis.filter((tenis) => {
-    if (tenis.name === productoNombre) {
-      return tenis;
+const eliminarTenis = (tenisNombre) => {
+  listaTenis = listaTenis.filter((item) => {
+    if (item.nombre !== tenisNombre) {
+      return respuesta;
+    } else if (item.nombre === item.nombre) {
+      alert("seguro");
     }
   });
-
   imprimirProductos(listaTenis);
 };
 
