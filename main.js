@@ -3,8 +3,8 @@ let listaTenis = [];
 const agregarProducto = (e) => {
   e.preventDefault();
 
-  const nuevoProductoForm = document.getElementById("nuevoProductoForm");
-  const elementos = [...nuevoProductoForm.elements];
+  const productoForm = document.getElementById("productoForm");
+  const elementos = [...productoForm.elements];
   let dataProducto = {};
 
   elementos.forEach((item) => {
@@ -14,20 +14,21 @@ const agregarProducto = (e) => {
   });
 
   listaTenis.push(dataProducto);
-  nuevoProductoForm.reset();
+  productoForm.reset();
   console.log(listaTenis);
 
   imprimirProductos(listaTenis);
 };
-/*________________________________________________IMPRIMIR_________________________________________________________*/
+
+/*____________________________________________________IMPRIMIR________________________________________________*/
 
 const imprimirProductos = (lista) => {
-  const productList = document.getElementById("productList");
-  productList.innerHTML = "";
+  const listaProducto = document.getElementById("listaProducto");
+  listaProducto.innerHTML = "";
 
   lista.forEach((tenis) => {
     const contenedor = document.createElement("div");
-    const nombreProducto = document.createElement("p");
+    const nombretenis = document.createElement("h3");
     const precio = document.createElement("p");
     const descripcion = document.createElement("p");
     const categoria = document.createElement("p");
@@ -36,17 +37,16 @@ const imprimirProductos = (lista) => {
     boton.addEventListener("click", () => {
       eliminarTenis(tenis.nombre);
     });
-    
-    //TENIS
-    nombreProducto.textContent = `Nombre del producto: ${tenis.nombre}`;
-    precio.textContent = `Precio: $${tenis.precio}`;
-    descripcion.textContent = `descripcion: ${tenis.descripcion}`;
-    categoria.textContent = `Categoria: ${tenis.categoria}`;
-    cantidad.textContent = `Cantidad: ${tenis.cantidad}`;
+
+    nombretenis.textContent = `Nombre tenis: ${tenis.nombre}`;
+    precio.textContent = `Precio: $ ${tenis.precio}`;
+    descripcion.textContent = `Descripcion:  ${tenis.descripcion}`;
+    categoria.textContent = `Categoria:  ${tenis.categoria}`;
+    cantidad.textContent = `Cantidad ${tenis.cantidad}`;
     boton.textContent = `Eliminar`;
 
     contenedor.append(
-      nombreProducto,
+      nombretenis,
       precio,
       descripcion,
       categoria,
@@ -54,15 +54,14 @@ const imprimirProductos = (lista) => {
       boton
     );
 
-    productList.appendChild(contenedor);
+    listaProducto.appendChild(contenedor);
   });
 };
-
-/*________________________________________________BORRAR_________________________________________________________*/
+/*____________________________________________________BORRAR________________________________________________*/
 
 const eliminarTenis = (productoNombre) => {
-  listaTenis = listaTenis.filter((item) => {
-    if (item.nombre !== productoNombre) {
+  listaTenis = listaTenis.filter((tenis) => {
+    if (tenis.name === productoNombre) {
       return tenis;
     }
   });
@@ -70,14 +69,18 @@ const eliminarTenis = (productoNombre) => {
   imprimirProductos(listaTenis);
 };
 
-/*________________________________________________BUSCAR_________________________________________________________*/
+/*____________________________________________________SEARCH________________________________________________*/
 
-const buscarTenis = (productoNombre) => {
-  listaTenis = listaTenis.filter((item) => {
-    if (item.nombre !== productoNombre) {
-      return tenis;
+const myList = document.querySelectorAll(".myList");
+
+const form = document.querySelector("#miFormulario");
+const input = document.querySelector("#name");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  myArray.forEach((element) => {
+    if (element.textContent === input.value) {
+      console.log("encontrado");
     }
   });
-
-  imprimirProductos(listaTenis);
-};
+});
