@@ -13,6 +13,10 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
+.ocultar {
+  display: none;
+}
+
 .btn {
   border: #71b7e6 solid 1px;
   border-radius: 5px;
@@ -28,11 +32,14 @@ body {
   padding: 5px 70px 5px;
 }
 
-.center {
+.center input[type="search"] {
+  border: #71b7e6 solid 2px;
   display: flex;
   gap: 10px;
-  margin: 20px 20px 20px;
+  padding: 5px 50px 5px;
+  border-radius: 15px;
 }
+
 .container {
   max-width: 700px;
   width: 100%;

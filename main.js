@@ -1,3 +1,5 @@
+/*____________________________________________________________________________________________________*/
+
 let listaTenis = [];
 
 const agregarProducto = (e) => {
@@ -28,6 +30,7 @@ const imprimirProductos = (lista) => {
 
   lista.forEach((tenis) => {
     const contenedor = document.createElement("div");
+    contenedor.classList.add("product");
     const nombretenis = document.createElement("h3");
     const precio = document.createElement("p");
     const descripcion = document.createElement("p");
@@ -69,18 +72,24 @@ const eliminarTenis = (productoNombre) => {
   imprimirProductos(listaTenis);
 };
 
-/*____________________________________________________SEARCH________________________________________________*/
+/*____________________________________________________BUSCAR________________________________________________*/
 
-const myList = document.querySelectorAll(".myList");
+const buscar = document.getElementById("buscar");
+const producto = document.querySelectorAll(".product");
 
-const form = document.querySelector("#miFormulario");
-const input = document.querySelector("#name");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  myArray.forEach((element) => {
-    if (element.textContent === input.value) {
-      console.log("encontrado");
+buscar.addEventListener("keyup", (e) => {
+  console.log(e.target.value);
+  producto.forEach((contenedor) => {
+    if (
+      contenedor.textContent
+        .toLocaleLowerCase()
+        .includes(e.target.value.toLocaleLowerCase())
+    ) {
+      contenedor.classList.remove("ocultar");
+    } else {
+      contenedor.classList.add("ocultar");
     }
   });
 });
+
+/*____________________________________________________________________________________________________*/
