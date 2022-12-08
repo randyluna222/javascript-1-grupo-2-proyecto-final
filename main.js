@@ -1,24 +1,19 @@
 /*____________________________________________________________________________________________________*/
 
 let listaTenis = [];
-
 const agregarProducto = (e) => {
   e.preventDefault();
-
   const productoForm = document.getElementById("productoForm");
   const elementos = [...productoForm.elements];
-  let dataProducto = {};
-
+  let datosTenis = {};
   elementos.forEach((item) => {
     if (item.name && item.name !== "enviar") {
-      dataProducto[item.name] = item.value;
+      datosTenis[item.name] = item.value;
     }
   });
-
-  listaTenis.push(dataProducto);
+  listaTenis.push(datosTenis);
   productoForm.reset();
   console.log(listaTenis);
-
   imprimirProductos(listaTenis);
 };
 
