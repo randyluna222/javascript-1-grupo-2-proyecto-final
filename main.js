@@ -1,85 +1,101 @@
+/*____________________________________________________________________________________________________*/
+
 let listaTenis = [];
 
 const agregarProducto = (e) => {
   e.preventDefault();
 
-  const nuevoProductoForm = document.getElementById('nuevoProductoForm');
-  const elementos = [...nuevoProductoForm.elements];
+  const productoForm = document.getElementById("productoForm");
+  const elementos = [...productoForm.elements];
   let dataProducto = {};
 
-  function checkName(evt) { var charCode = evt.charCode; if (charCode != 0)
-    { if (charCode < 97 || charCode > 122) 
-       { evt.preventDefault(); alert("Por favor usa sólo letras minúsculas." + "\n" + "charCode: " + charCode + "\n" ); } 
-   } 
-}
-
   elementos.forEach((item) => {
-    if (item.name && item.name !== 'enviar') {
+    if (item.name && item.name !== "enviar") {
       dataProducto[item.name] = item.value;
     }
   });
 
-let repetido = false
-  listaTenis.forEach((element)=>{
-    if(element.nombre == dataProducto.nombre){
-      repetido = true
-    }
-  })
-  if( !repetido){
-    listaTenis.push(dataProducto);
-  }
-
-  nuevoProductoForm.reset();
+  listaTenis.push(dataProducto);
+  productoForm.reset();
   console.log(listaTenis);
 
   imprimirProductos(listaTenis);
 };
 
+/*____________________________________________________IMPRIMIR________________________________________________*/
+
 const imprimirProductos = (lista) => {
-  const productList = document.getElementById('productList');
-  productList.innerHTML = '';
+  const listaProducto = document.getElementById("listaProducto");
+  listaProducto.innerHTML = "";
 
   lista.forEach((tenis) => {
-    const contenedor = document.createElement('div');
-    const nombreProducto  = document.createElement('h2');
-    const precio = document.createElement('p'); 
-    const descripcion = document.createElement('p');
-    const categoria = document.createElement('p');
-    const cantidad = document.createElement('p');
-    const boton = document.createElement('button'); // <button onclick="eliminarTenis('celular')">aksdal</button>
-
-    boton.addEventListener('click', () => {
+    const contenedor = document.createElement("div");
+    contenedor.classList.add("product");
+    const nombretenis = document.createElement("h3");
+    const precio = document.createElement("p");
+    const descripcion = document.createElement("p");
+    const categoria = document.createElement("p");
+    const cantidad = document.createElement("p");
+    const boton = document.createElement("button");
+    boton.addEventListener("click", () => {
       eliminarTenis(tenis.nombre);
+      if (item.nombre == tenisNombre) {
+        alert("no");}
     });
 
 
-    nombreProducto.textContent = `nombreProducto: ${tenis.nombre}`;
-    precio.textContent = `precio: ${tenis.precio}`;
-    descripcion.textContent = `descripcion: $ ${tenis.descripcion}`;
-    categoria.textContent = `categoria: $ ${tenis.categoria}`;
-    cantidad.textContent = `cantidad ${tenis.cantidad}`;
+
+    nombretenis.textContent = `Nombre tenis: ${tenis.nombre}`;
+    precio.textContent = `Precio: $ ${tenis.precio}`;
+    descripcion.textContent = `Descripcion:  ${tenis.descripcion}`;
+    categoria.textContent = `Categoria:  ${tenis.categoria}`;
+    cantidad.textContent = `Cantidad ${tenis.cantidad}`;
     boton.textContent = `Eliminar`;
 
-    contenedor.append(nombreProducto, precio, descripcion, categoria, cantidad, boton);
+    contenedor.append(
+      nombretenis,
+      precio,
+      descripcion,
+      categoria,
+      cantidad,
+      boton
+    );
+    
 
-    productList.appendChild(contenedor);
+    listaProducto.appendChild(contenedor);
   });
-}
+};
+/*____________________________________________________BORRAR________________________________________________*/
 
-const eliminarTenis = (productoNombre) => {
+const eliminarTenis = (tenisNombre) => {
   listaTenis = listaTenis.filter((item) => {
-    if(item.nombre !== productoNombre) {
-      return tenis;
+    if (item.nombre !== tenisNombre) {
+      return item;
+    } else if (item.nombre === item.nombre) {
+      alert("seguro que quieres borrar");
     }
   });
-
   imprimirProductos(listaTenis);
-}
+};
 
+/*____________________________________________________BUSCAR________________________________________________*/
 
+const buscar = document.getElementById("buscar");
+const producto = document.querySelectorAll(".product");
 
-function checkName(evt) { var charCode = evt.charCode; if (charCode != 0)
-     { if (charCode < 97 || charCode > 122) 
-        { evt.preventDefault(); alert("Por favor usa sólo letras minúsculas." + "\n" + "charCode: " + charCode + "\n" ); } 
-    } 
-}
+buscar.addEventListener("keyup", (e) => {
+  console.log(e.target.value);
+  producto.forEach((contenedor) => {
+    if (
+      contenedor.textContent
+        .toLocaleLowerCase()
+        .includes(e.target.value.toLocaleLowerCase())
+    ) {
+      contenedor.classList.remove("ocultar");
+    } else {
+      contenedor.classList.add("ocultar");
+    }
+  });
+});
+
+/*____________________________________________________________________________________________________*/

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Tennis</h1>
+    <h2> Agregar Tennis </h2>
+    <div class="content">
+      <form action="" id="productoForm" onsubmit="agregarProducto(event)">
+        <div class="user-details">
+          <div class="input-box">
+            <label for="Nombredelproducto">Nombre del producto</label>
+            <input required class="form" type="text" name="nombre" onkeypress="checkName(event);" id="nombre" value=""
+              autocomplete="off">
+          </div>
+          <div class="input-box">
+            <label class="details" for="precio">Precio</label>
+            <input required type="number" name="precio" id="precio" value="" autocomplete="off">
+          </div>
+          <div class="input-box">
+            <label class="details" for="descripcion">descripción</label>
+            <input type="text" name="descripcion" id="descripcion" value="" autocomplete="off">
+          </div>
+          <div class="input-box">
+            <label class="details" for="categoria">Categoría</label>
+            <input required type="text" name="categoria" id="categoria" value="" autocomplete="off">
+          </div>
+          <div class="input-box">
+            <label class="details" for="Cantidad">Cantidad</label>
+            <input required type="number" name="cantidad" id="cantidad" value="" autocomplete="off">
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" name="enviar" value="Agregar" />
+        </div>
+      </form>
+    </div>
+    <!-----SEARCH----->
+    <div class="center">
+      <input type="search" id="buscar" name="buscar " placeholder="Buscar...." autocomplete="off">
+    </div>
+    <div class="list-container">
+      <div class="list-header">
+        <h2> Lista de Productos </h2>
+      </div>
+      <div id="listaProducto" class="lista-producto">
+        <h4>No hay productos por el momento</h4>
+      </div>
+    </div>
+</body>
+<script src="./main.js"></script>
+
+</html>
